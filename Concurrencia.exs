@@ -19,15 +19,15 @@ defmodule Concurrencia do
       acc
     else
       fila = Enum.at(matriz,i)
-      s1(matriz, i+1, acc + suma_fila(fila,i,0,0))
+      s1(matriz, i+1, acc + suma_fila_abajo(fila,i,0,0))
     end
   end
 
-  def suma_fila(fila,i,j,acc) do
+  def suma_fila_abajo(fila,i,j,acc) do
     if j>=i do
       acc
     else
-      suma_fila(fila,i,j+1, acc+Enum.at(fila,j))
+      suma_fila_abajo(fila,i,j+1, acc+Enum.at(fila,j))
     end
   end
 
